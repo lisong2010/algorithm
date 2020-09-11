@@ -3,6 +3,8 @@
  */
 package com.ymm;
 
+import java.util.Arrays;
+
 /**
  * @author song.li
  * @date 2020/09/10
@@ -14,13 +16,13 @@ public class SelectSort {
 
         sort(arr);
 
-        print(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void sort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;
-            for (int j = 0; j < array.length; j++) {
+            for (int j = i + 1; j < array.length; j++) {
                 if (array[j] < array[minIndex]) {
                     minIndex = j;
                 }
@@ -37,9 +39,6 @@ public class SelectSort {
         array[j] = tmp;
     }
 
-    static void print(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
+
+
 }
