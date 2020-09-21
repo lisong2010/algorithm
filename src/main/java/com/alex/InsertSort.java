@@ -1,7 +1,4 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2020 All Rights Reserved.
- */
-package com.ymm;
+package com.alex;
 
 import java.util.Arrays;
 

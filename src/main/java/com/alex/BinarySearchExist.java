@@ -1,33 +1,45 @@
-/**
- * ymm56.com Inc. Copyright (c) 2013-2020 All Rights Reserved.
- */
-package com.ymm;
+package com.alex;
 
 import java.util.Arrays;
 
 /**
- *
  * @author song.li
  * @date 2020/09/14
  */
 public class BinarySearchExist {
-    public static boolean exist(int[] array, int num) {
-        int mid = array.length / 2;
 
-        while (array[mid] != num) {
-            if(array[mid] < num) {
-                mid += (array.length - mid) /2;
+    public static boolean exist(int[] array, int num) {
+        if (array == null || array.length == 0) {
+            return false;
+        }
+        if (array.length == 1) {
+            return array[0] == num;
+        }
+
+        int L = 0;
+        int R = array.length - 1;
+        int mid = 0;
+
+        while (L < R) {
+            mid = L + (R - L) / 2;
+
+            if (array[mid] == num) {
+                return true;
+            }
+            if (array[mid] < num) {
+                L = mid + 1;
             } else {
-                mid = mid / 2;
+                R = mid - 1;
             }
         }
-        return false;
+
+        return array[L] == num;
     }
 
     // for test
     public static boolean test(int[] sortedArr, int num) {
-        for(int cur : sortedArr) {
-            if(cur == num) {
+        for (int cur : sortedArr) {
+            if (cur == num) {
                 return true;
             }
         }
